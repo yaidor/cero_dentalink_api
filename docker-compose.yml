@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  dentalink_fastapi:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    restart: always
+    hostname: dentalink_fastapi
+    container_name: dentalink_fastapi
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/code
+    env_file:
+      - env/app.env
+    healthcheck:
+      test: curl --fail http://localhost:8000/health || exit 1
+      interval: 60s
+      retries: 5
+      start_period: 20s
+      timeout: 2s
