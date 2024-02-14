@@ -9,6 +9,8 @@ from pydantic import BaseSettings
 
 class AppSettings(BaseSettings):
     # Registrar variables de entorno de app.env
+    app_token: str
+    url_citas: str
     app_name: str = "Dentalink_FastAPI"
     app_version: str = "0.0.1"
     app_description: str = "API for Dentalink"

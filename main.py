@@ -13,7 +13,7 @@ async def get():
 
 @app.middleware("http")
 async def add_process_time_header(request, call_next):
-    """Middleware para agregar el tiempo de procesamiento de la petición"""
+    """Middleware para agregar el tiempo de procesamiento de las peticiones"""
     start_time = time.time()
     response = await call_next(request)
     process_time = time.time() - start_time

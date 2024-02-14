@@ -2,3 +2,4 @@ fastapi
 pydantic==1.*
 uvicorn
 asgi-logger
+requests
