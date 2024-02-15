@@ -11,4 +11,4 @@ class AppointmentModel(BaseModel):
 class StateAppointmentModel(BaseModel):
     id_appointment: int = Field(..., description="ID of the appointment")
     id_state: int = Field(..., description="ID of the new state of the appointment")
-    comments: str = Field(..., description="Comments of the state change")
+    comments: str | None = Field(None, description="Comments about the change of state")
