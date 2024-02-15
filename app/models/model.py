@@ -3,12 +3,12 @@ from datetime import date
 from typing import Optional
 
 class AppointmentModel(BaseModel):
-    fecha_inicio: date | None = None
-    fecha_fin: date | None = None
-    id_sucursales: list[int] | None = None
-    id_estado_cita: list[int] | None = None
+    ini_date: date | None = None
+    end_date: date | None = None
+    id_state: list[int] | None = None
+    id_office: list[int] | None = None
 
 class StateAppointmentModel(BaseModel):
-    id_cita: int = Field(..., description="Id de la cita")
-    id_estado: int = Field(..., description="Estado de la cita")
-    comentarios: str = Field(..., description="Comentarios del cambio de estado")
+    id_appointment: int = Field(..., description="ID of the appointment")
+    id_state: int = Field(..., description="ID of the new state of the appointment")
+    comments: str = Field(..., description="Comments of the state change")
